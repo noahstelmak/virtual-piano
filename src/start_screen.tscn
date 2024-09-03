@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://chwbmj8meb6x7"]
+
+[ext_resource type="Script" path="res://src/start_screen.gd" id="1_2xwpl"]
+[ext_resource type="Texture2D" uid="uid://2jbyps572sn8" path="res://assets/classical-music-background.jpg" id="2_4qye8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdoei"]
+bg_color = Color(0.314316, 0.314316, 0.314316, 1)
+
+[sub_resource type="Theme" id="Theme_5k1gk"]
+Panel/styles/panel = SubResource("StyleBoxFlat_fdoei")
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2xwpl")
+metadata/_edit_vertical_guides_ = [-1333.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 1064.0
+texture = ExtResource("2_4qye8")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -116.0
+offset_right = 128.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_5k1gk")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 60.0
+text = "Virtual Piano"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 60.0
+offset_right = 240.0
+offset_bottom = 177.0
+theme_override_constants/separation = 12
+
+[node name="Livre" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Livre"
+
+[node name="Genius_Audio" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Genius (Audio)"
+
+[node name="Genius_Partitura" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Genius (Partitura)"
+
+[node name="ExitButton" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 208.0
+offset_right = 240.0
+offset_bottom = 239.0
+text = "Sair"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Livre" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Genius_Audio" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Genius_Partitura" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]

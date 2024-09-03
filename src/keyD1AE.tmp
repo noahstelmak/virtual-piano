@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2wg67c13g8wp"]
+
+[ext_resource type="Script" path="res://src/key.gd" id="1_mv70n"]
+[ext_resource type="SpriteFrames" uid="uid://ypfsr8vd7te7" path="res://src/resources/key.tres" id="2_yavif"]
+[ext_resource type="Script" path="res://src/nodes/auto_polygon_2d.gd" id="3_n0fmy"]
+
+[node name="Key" type="Area2D"]
+scale = Vector2(-1, 1)
+script = ExtResource("1_mv70n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_yavif")
+animation = &"side_key"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.5, 0)
+
+[node name="AutoShape2D" type="Node" parent="." node_paths=PackedStringArray("sprite")]
+script = ExtResource("3_n0fmy")
+sprite = NodePath("../AnimatedSprite2D")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="polygon_changed" from="AutoShape2D" to="." method="_on_auto_shape_2d_polygon_changed"]
