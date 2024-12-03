@@ -1,7 +1,10 @@
-@tool
 extends Node2D
 
 var offset: float = 3.5
+
+signal note_pressed(note: int)
+
+var key_scene =  preload("res://src/key/key.tscn")
 
 var keys = {}
 
@@ -35,7 +38,7 @@ func _ready():
 
 func _create_keys():
 	for i in range(36):
-		var key = load("res://src/key/key.tscn").instantiate()
+		var key = key_scene.instantiate()
 		var note = c3 + i
 		key.set_note(note)
 		keys[note] = key
@@ -77,8 +80,4 @@ func _input(event):
 				keys[note].call_deferred("_release_key")
 
 func _play_note(note: int):
-	var input_event: InputEventMIDI = InputEventMIDI.new()
-	input_event.message = MIDIMessage.MIDI_MESSAGE_NOTE_ON 
-	input_event.pitch = note
-	input_event.velocity = 0x7F 
-	$MidiPlayer.receive_raw_midi_message(input_event)
+	note_pressed.emit(note)

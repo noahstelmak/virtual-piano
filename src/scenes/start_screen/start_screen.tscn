@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://chwbmj8meb6x7"]
 
-[ext_resource type="Script" path="res://src/start_screen.gd" id="1_2xwpl"]
+[ext_resource type="Script" path="res://src/scenes/start_screen/start_screen.gd" id="1_2xwpl"]
 [ext_resource type="Texture2D" uid="uid://2jbyps572sn8" path="res://assets/classical-music-background.jpg" id="2_4qye8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdoei"]
@@ -79,6 +79,5 @@ offset_bottom = 239.0
 text = "Sair"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Livre" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Genius_Audio" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Genius_Partitura" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Genius_Audio" to="." method="_on_genius_audio_pressed"]
 [connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]
