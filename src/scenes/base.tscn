@@ -1,16 +1,21 @@
 [gd_scene load_steps=3 format=3 uid="uid://bnc288ilvfnb"]
 
+[ext_resource type="Texture2D" uid="uid://cmcdjaqdei2g3" path="res://assets/Free Sky Backgrounds/Stylized Sky Background (3).png" id="1_7qvd4"]
 [ext_resource type="PackedScene" uid="uid://diew5y08iavon" path="res://src/piano/piano.tscn" id="2_5yu5m"]
-[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="3_x1vjv"]
 
 [node name="Base" type="Node2D"]
+scale = Vector2(2, 2)
 
-[node name="MidiPlayer" parent="." instance=ExtResource("3_x1vjv")]
-soundfont = "res://assets/Yamaha-Grand-Lite-v2.0.sf2"
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 176.0
+offset_bottom = 99.0
+texture = ExtResource("1_7qvd4")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="Piano" parent="." instance=ExtResource("2_5yu5m")]
 position = Vector2(4, 80)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-zoom = Vector2(6.576, 6.576)
+zoom = Vector2(3.288, 3.288)

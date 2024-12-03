@@ -4,7 +4,7 @@ var offset: float = 3.5
 
 signal note_pressed(note: int)
 
-var key_scene =  preload("res://src/key/key.tscn")
+var key_scene = preload("res://src/key/key.tscn")
 
 var keys = {}
 
@@ -30,6 +30,8 @@ var solfege_to_midi: Dictionary = {
 var current_octave: int = 5; 
 var c3: int = 48;
 
+var playingback = false;
+
 func _ready():
 	_create_keys();
 	$"OctaveIndicator/0".color = Color.DARK_GRAY;
@@ -41,6 +43,8 @@ func _create_keys():
 		var key = key_scene.instantiate()
 		var note = c3 + i
 		key.set_note(note)
+		key.note_name = solfege_to_midi.keys()[i % 12] 
+		key.piano = self
 		keys[note] = key
 		key.connect('note_pressed', _play_note)
 		
@@ -55,6 +59,9 @@ func _create_keys():
 			key.z_index = 2
 
 func _input(event):
+	if playingback:
+		return
+		
 	if event is not InputEventKey:
 		return
 		
@@ -79,5 +86,14 @@ func _input(event):
 			if keys.has(note):
 				keys[note].call_deferred("_release_key")
 
+func play_note(note: int):
+	if keys.has(note):
+		playingback = true
+		keys[note].call_deferred("press_key")
+		await get_tree().create_timer(0.5).timeout
+		keys[note].call_deferred("release_key")
+		playingback = false
+
 func _play_note(note: int):
-	note_pressed.emit(note)
+	if not playingback:
+		note_pressed.emit(note)

@@ -21,6 +21,7 @@ Global="*res://src/global.gd"
 [display]
 
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [input]
 

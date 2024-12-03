@@ -7,6 +7,9 @@ signal note_pressed(note: int)
 signal note_released(note: int)
 
 @export var note: int;
+@export var note_name: String;
+
+var piano;
 
 var is_mouse_over: bool = false;
 
@@ -34,11 +37,24 @@ func _ready():
 			$CollisionPolygon2D2.queue_free()
 			animated_sprite_2d.set_animation("black_key")
 
+func press_key():
+	show_note_particle(note) 
+	animated_sprite_2d.set_frame(1)
+
+func release_key():
+	animated_sprite_2d.set_frame(0)
+
 func _press_key():
+	if piano.playingback:
+		return;
+	show_note_particle(note) 
 	animated_sprite_2d.set_frame(1)
 	note_pressed.emit(note)
 
 func _release_key():
+	if piano.playingback:
+		return;
+
 	animated_sprite_2d.set_frame(0)
 	note_released.emit(note)
 
@@ -66,3 +82,12 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	is_mouse_over = false
 	_release_key()
+
+var text_particle_scene = preload("res://src/TextParticle.tscn")
+
+func show_note_particle(note: int):
+	var particle = text_particle_scene.instantiate()
+	particle.text = str(note_name)  # Display the note number (you can map to names if needed)
+	particle.global_position = Vector2(10 * -scale.x, -30)  # Offset above the key
+	particle.scale = Vector2(0.25 * scale.x, 0.25)
+	add_child(particle)

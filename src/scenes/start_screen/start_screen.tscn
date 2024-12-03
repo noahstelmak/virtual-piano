@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://chwbmj8meb6x7"]
 
 [ext_resource type="Script" path="res://src/scenes/start_screen/start_screen.gd" id="1_2xwpl"]
-[ext_resource type="Texture2D" uid="uid://2jbyps572sn8" path="res://assets/classical-music-background.jpg" id="2_4qye8"]
+[ext_resource type="Texture2D" uid="uid://csl3f6rxnig7v" path="res://assets/Free Sky Backgrounds/Stylized Sky Background (1).png" id="2_hgu7t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdoei"]
 bg_color = Color(0.314316, 0.314316, 0.314316, 1)
@@ -23,7 +23,7 @@ metadata/_edit_vertical_guides_ = [-1333.0]
 layout_mode = 0
 offset_right = 1154.0
 offset_bottom = 1064.0
-texture = ExtResource("2_4qye8")
+texture = ExtResource("2_hgu7t")
 expand_mode = 1
 stretch_mode = 4
 
@@ -62,13 +62,9 @@ theme_override_constants/separation = 12
 layout_mode = 2
 text = "Livre"
 
-[node name="Genius_Audio" type="Button" parent="Panel/VBoxContainer"]
+[node name="JogoMemoria" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-text = "Genius (Audio)"
-
-[node name="Genius_Partitura" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-text = "Genius (Partitura)"
+text = "Memória"
 
 [node name="ExitButton" type="Button" parent="Panel"]
 layout_mode = 2
@@ -79,5 +75,5 @@ offset_bottom = 239.0
 text = "Sair"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Livre" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Genius_Audio" to="." method="_on_genius_audio_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/JogoMemoria" to="." method="_on_genius_audio_pressed"]
 [connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]

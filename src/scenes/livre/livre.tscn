@@ -1,9 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjwwbjadw1keh"]
 
 [ext_resource type="PackedScene" uid="uid://bnc288ilvfnb" path="res://src/scenes/base.tscn" id="1_6318v"]
-[ext_resource type="Script" path="res://base.gd" id="2_nceo7"]
+[ext_resource type="Script" path="res://src/scenes/livre/livre.gd" id="2_34s0q"]
 
 [node name="Base" instance=ExtResource("1_6318v")]
-script = ExtResource("2_nceo7")
+script = ExtResource("2_34s0q")
+
+[node name="MidiPlayer" parent="." index="0"]
+soundfont = ""
 
 [connection signal="note_pressed" from="Piano" to="." method="_on_piano_note_pressed"]

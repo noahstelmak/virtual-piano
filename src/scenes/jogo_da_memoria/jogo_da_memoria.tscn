@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf5qjphqa786c"]
+
+[ext_resource type="PackedScene" uid="uid://bnc288ilvfnb" path="res://src/scenes/base.tscn" id="1_i5p4a"]
+[ext_resource type="Script" path="res://src/scenes/jogo_da_memoria/jogo_da_memoria.gd" id="2_ubbap"]
+
+[node name="Base" instance=ExtResource("1_i5p4a")]
+script = ExtResource("2_ubbap")
+
+[connection signal="note_pressed" from="Piano" to="." method="_on_piano_note_pressed"]
