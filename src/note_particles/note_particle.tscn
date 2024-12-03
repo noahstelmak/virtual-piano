@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/note_particles/note_particle.gd" id="1_403ik"]
 
-[node name="TextParticle" type="Label"]
+[node name="NoteParticle" type="Label"]
 offset_right = 33.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 48

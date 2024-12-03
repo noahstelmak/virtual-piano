@@ -6,7 +6,7 @@
 [node name="Base" type="Node2D"]
 scale = Vector2(2, 2)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 offset_right = 176.0
 offset_bottom = 99.0
 texture = ExtResource("1_7qvd4")

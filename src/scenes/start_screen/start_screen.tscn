@@ -19,7 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_2xwpl")
 metadata/_edit_vertical_guides_ = [-1333.0]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1154.0
 offset_bottom = 1064.0
@@ -74,6 +74,6 @@ offset_right = 240.0
 offset_bottom = 239.0
 text = "Sair"
 
-[connection signal="pressed" from="Panel/VBoxContainer/Livre" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/JogoMemoria" to="." method="_on_genius_audio_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Livre" to="." method="_on_livre_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/JogoMemoria" to="." method="_on_jogo_memoria_pressed"]
 [connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]
