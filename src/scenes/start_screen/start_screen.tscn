@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://chwbmj8meb6x7"]
 
 [ext_resource type="Script" path="res://src/scenes/start_screen/start_screen.gd" id="1_2xwpl"]
-[ext_resource type="Texture2D" uid="uid://csl3f6rxnig7v" path="res://assets/Free Sky Backgrounds/Stylized Sky Background (1).png" id="2_hgu7t"]
+[ext_resource type="Texture2D" uid="uid://csl3f6rxnig7v" path="res://assets/backgrounds/Stylized Sky Background (1).png" id="2_hgu7t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdoei"]
 bg_color = Color(0.314316, 0.314316, 0.314316, 1)

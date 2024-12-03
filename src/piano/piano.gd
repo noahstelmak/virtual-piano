@@ -4,7 +4,7 @@ var offset: float = 3.5
 
 signal note_pressed(note: int)
 
-var key_scene = preload("res://src/key/key.tscn")
+const KEY = preload("res://src/keys/key.tscn")
 
 var keys = {}
 
@@ -21,7 +21,7 @@ var solfege_to_midi: Dictionary = {
 	"La": 9,
 	"La#": 10,
 	"Si": 11,
-	#"Do1": 12,
+	"Do1": 12,
 	#"Do#1": 13,
 	#"Re1": 14,
 	#"Re#1": 15,
@@ -40,7 +40,7 @@ func _ready():
 
 func _create_keys():
 	for i in range(36):
-		var key = key_scene.instantiate()
+		var key = KEY.instantiate()
 		var note = c3 + i
 		key.set_note(note)
 		key.note_name = solfege_to_midi.keys()[i % 12] 

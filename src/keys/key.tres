@@ -1,0 +1,63 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://ypfsr8vd7te7"]
+
+[ext_resource type="Texture2D" uid="uid://dksb80gxivssk" path="res://assets/sprites/piano_keys_b.png" id="1_hncly"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j86gt"]
+atlas = ExtResource("1_hncly")
+region = Rect2(28, 0, 3, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kk3a"]
+atlas = ExtResource("1_hncly")
+region = Rect2(31, 0, 3, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o81dr"]
+atlas = ExtResource("1_hncly")
+region = Rect2(14, 0, 7, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eet8k"]
+atlas = ExtResource("1_hncly")
+region = Rect2(21, 0, 7, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nhor"]
+atlas = ExtResource("1_hncly")
+region = Rect2(0, 0, 7, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uokp3"]
+atlas = ExtResource("1_hncly")
+region = Rect2(7, 0, 7, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j86gt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kk3a")
+}],
+"loop": true,
+"name": &"black_key",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o81dr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eet8k")
+}],
+"loop": true,
+"name": &"middle_key",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nhor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uokp3")
+}],
+"loop": true,
+"name": &"side_key",
+"speed": 5.0
+}]

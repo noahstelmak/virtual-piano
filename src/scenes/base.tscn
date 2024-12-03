@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bnc288ilvfnb"]
 
-[ext_resource type="Texture2D" uid="uid://cmcdjaqdei2g3" path="res://assets/Free Sky Backgrounds/Stylized Sky Background (3).png" id="1_7qvd4"]
+[ext_resource type="Texture2D" uid="uid://cmcdjaqdei2g3" path="res://assets/backgrounds/Stylized Sky Background (3).png" id="1_7qvd4"]
 [ext_resource type="PackedScene" uid="uid://diew5y08iavon" path="res://src/piano/piano.tscn" id="2_5yu5m"]
 
 [node name="Base" type="Node2D"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://8w3um44kfbhw"]
+
+[ext_resource type="Script" path="res://src/note_particles/note_particle.gd" id="1_403ik"]
+
+[node name="TextParticle" type="Label"]
+offset_right = 33.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 48
+text = "font"
+script = ExtResource("1_403ik")
