@@ -44,7 +44,7 @@ Este projeto é um aplicativo desktop projetado para ensinar os fundamentos do p
 
 ## Especificações Técnicas
 
-## Requisitos Funcionais
+### Requisitos Funcionais
 
 1. Ensinar fundamentos de piano.
 2. Suportar entrada de dispositivos MIDI e teclado do computador.
@@ -52,7 +52,7 @@ Este projeto é um aplicativo desktop projetado para ensinar os fundamentos do p
 4. Exibir e tocar partituras de forma interativa.
 5. Reproduzir sons de piano de alta qualidade.
 
-## Requisitos Não Funcionais
+### Requisitos Não Funcionais
 
 1. Interface intuitiva e fácil de usar.
 2. Funcionalidade offline — sem necessidade de conexão com a internet.
