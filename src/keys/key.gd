@@ -25,6 +25,8 @@ func _ready():
 			$CollisionPolygon2D2.queue_free()
 			$CollisionPolygon2D3.queue_free()
 			scale = Vector2(-1, 1)
+			$WhiteKeyLabel.position += Vector2(5.5, 0)
+			$WhiteKeyLabel.scale = Vector2(-0.25, 0.25)
 		4, 11:
 			$CollisionPolygon2D2.queue_free()
 			$CollisionPolygon2D3.queue_free()

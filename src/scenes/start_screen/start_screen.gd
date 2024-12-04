@@ -1,7 +1,7 @@
 extends Control
 
-const LIVRE = preload("res://src/scenes/livre/livre.tscn")
-const JOGO_DA_MEMORIA = preload("res://src/scenes/jogo_da_memoria/jogo_da_memoria.tscn")
+const LIVRE = preload("res://src/scenes/livre/instrucoes.tscn")
+const JOGO_DA_MEMORIA = preload("res://src/scenes/jogo_da_memoria/instrucoes.tscn")
 
 func _on_livre_pressed():
 	get_tree().change_scene_to_packed(LIVRE)

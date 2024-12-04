@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://7hn3x6wsbsy8"]
+
+[ext_resource type="PackedScene" uid="uid://b3o71ay8p6r6x" path="res://src/scenes/instrucoes/instrucoes.tscn" id="1_1cqhm"]
+[ext_resource type="PackedScene" uid="uid://bf5qjphqa786c" path="res://src/scenes/jogo_da_memoria/jogo_da_memoria.tscn" id="2_o87ii"]
+
+[node name="Instrucoes" instance=ExtResource("1_1cqhm")]
+nextScene = ExtResource("2_o87ii")
+
+[node name="Label" parent="Panel" index="0"]
+text = "Jogo da Memoria"
+
+[node name="RichTextLabel" parent="Panel" index="1"]
+text = "Objetivo:
+
+    O objetivo é repetir corretamente a sequência de notas tocadas pelo piano. Cada vez que você acertar a sequência, ela ficará mais difícil e a quantidade de notas vai aumentar.
+
+Como jogar:
+
+    Sequência de notas: O jogo começa com uma sequência curta de notas tocadas pelo piano.
+    Reprodução: Você deve clicar nas teclas do piano na mesma ordem em que elas foram tocadas.
+    Erro: Se você errar uma nota, o jogo irá reiniciar.
+    Vencendo: Se você conseguir repetir toda a sequência corretamente, o jogo irá aumentar a dificuldade, adicionando mais uma nota à sequência.
+
+Dicas:
+
+    Preste atenção nas notas tocadas.
+    Use a memória para recordar a sequência e não se apresse!
+    As notas podem ser do tipo Do, Re, Mi, Fa, Sol, La, Si e suas variações (#).
+
+Divirta-se e boa sorte!
+"

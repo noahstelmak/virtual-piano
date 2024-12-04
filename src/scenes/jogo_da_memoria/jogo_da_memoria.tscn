@@ -1,9 +1,44 @@
 [gd_scene load_steps=3 format=3 uid="uid://bf5qjphqa786c"]
 
-[ext_resource type="PackedScene" uid="uid://bnc288ilvfnb" path="res://src/scenes/base.tscn" id="1_i5p4a"]
+[ext_resource type="PackedScene" uid="uid://bnc288ilvfnb" path="res://src/scenes/base/base.tscn" id="1_i5p4a"]
 [ext_resource type="Script" path="res://src/scenes/jogo_da_memoria/jogo_da_memoria.gd" id="2_ubbap"]
 
 [node name="Base" instance=ExtResource("1_i5p4a")]
 script = ExtResource("2_ubbap")
+
+[node name="Score" type="Label" parent="." index="3"]
+offset_left = 20.0
+offset_right = 277.0
+offset_bottom = 80.0
+scale = Vector2(0.25, 0.25)
+theme_override_font_sizes/font_size = 50
+text = "Nível: 0"
+vertical_alignment = 1
+
+[node name="Indicators" type="Control" parent="." index="4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 24.0
+offset_bottom = 28.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="PauseIndicator" type="Node2D" parent="Indicators" index="0"]
+
+[node name="Line" type="Polygon2D" parent="Indicators/PauseIndicator" index="0"]
+antialiased = true
+polygon = PackedVector2Array(0, 24, 0, 0, 4, 0, 4, 24)
+
+[node name="Line2" type="Polygon2D" parent="Indicators/PauseIndicator" index="1"]
+position = Vector2(16, 0)
+antialiased = true
+polygon = PackedVector2Array(0, 24, 0, 0, 4, 0, 4, 24)
+
+[node name="PlayingIndicator" type="Polygon2D" parent="Indicators" index="1"]
+position = Vector2(-68, -28)
+antialiased = true
+polygon = PackedVector2Array(68, 52, 68, 28, 88, 40)
 
 [connection signal="note_pressed" from="Piano" to="." method="_on_piano_note_pressed"]
