@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dipuik8mlo4q3"]
+
+[ext_resource type="PackedScene" uid="uid://b3o71ay8p6r6x" path="res://src/scenes/instrucoes/instrucoes.tscn" id="1_x87sf"]
+[ext_resource type="PackedScene" uid="uid://c3hn85noxoy26" path="res://src/scenes/piano_hero/piano_hero.tscn" id="2_o0mje"]
+
+[node name="Instrucoes" instance=ExtResource("1_x87sf")]
+nextScene = ExtResource("2_o0mje")
+
+[node name="Label" parent="Panel" index="0"]
+text = "Piano Hero"
+
+[node name="RichTextLabel" parent="Panel" index="1"]
+text = "Objetivo:
+
+O objetivo é acompanhar a sequência de notas que aparece na tela e tocá-las corretamente no teclado do piano. Quanto mais acertos você fizer, maior será o desafio!
+Como Jogar:
+
+    Notas Descendo:
+        As notas irão descer pela tela em trilhas específicas. Cada trilha corresponde a uma tecla do piano.
+        Toque na tecla correta quando a nota alcançar a linha de ativação.
+
+    Pontuação:
+        Acerto: Toque na nota no momento certo para marcar pontos.
+        Erro: Se você errar a tecla ou não tocar no tempo correto, você perde uma chance."

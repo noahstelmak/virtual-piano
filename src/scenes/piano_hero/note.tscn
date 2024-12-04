@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq42e2n14xcs0"]
+
+[ext_resource type="Script" path="res://src/scenes/piano_hero/note.gd" id="1_qbr3w"]
+
+[node name="Note" type="PathFollow2D"]
+rotates = false
+loop = false
+script = ExtResource("1_qbr3w")
+
+[node name="Slim" type="Polygon2D" parent="."]
+position = Vector2(-0.5, 0)
+scale = Vector2(1, 2.66667)
+polygon = PackedVector2Array(-1, 0, -1, 3, 2, 3, 2, 0)
+
+[node name="Wide" type="Polygon2D" parent="."]
+position = Vector2(0, 5.33333)
+scale = Vector2(1, 2.66667)
+polygon = PackedVector2Array(-2.5, -2, -2.5, 1, 2.5, 1, 2.5, -2)

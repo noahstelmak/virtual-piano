@@ -62,6 +62,10 @@ theme_override_constants/separation = 12
 layout_mode = 2
 text = "Livre"
 
+[node name="PianoHero" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Piano Hero"
+
 [node name="JogoMemoria" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Memória"
@@ -75,5 +79,6 @@ offset_bottom = 239.0
 text = "Sair"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Livre" to="." method="_on_livre_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/PianoHero" to="." method="_on_piano_hero_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/JogoMemoria" to="." method="_on_jogo_memoria_pressed"]
 [connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]
