@@ -63,29 +63,6 @@ Este projeto é um aplicativo desktop projetado para ensinar os fundamentos do p
 
 - **Godot Engine**: Motor de jogo multiplataforma usado para desenvolvimento do aplicativo.
 - **GDScript**: Linguagem de script para criar a lógica do jogo.
-- **SQLite**: Banco de dados leve para armazenar o progresso do usuário e configurações do aplicativo.
-
-    Estrutura de Arquivos
-
-    ├── addons  
-    │   └── midi  
-    │       └── Scripts e configurações para funcionalidade MIDI.  
-    │  
-    ├── assets  
-    │   ├── backgrounds  
-    │   │   ├── Imagens de plano de fundo para a interface.  
-    │   ├── soundfonts  
-    │   │   ├── Yamaha-Grand-Lite-v2.0.sf2 (soundfont de piano).  
-    │   └── sprites  
-    │       ├── Recursos visuais para teclas de piano e outros elementos da interface.  
-    │  
-    └── src  
-        ├── Lógica global e gerenciamento de recursos.  
-        ├── Scripts e configurações para mapeamento de teclas.  
-        ├── Efeitos de partículas para animações de notas.  
-        ├── Visualização e reprodução de partituras.  
-        ├── Lógica de interação e interface do piano.  
-        └── Modos de jogo (ex.: memória e prática livre).  
 
 ## Cenários de Uso
 
@@ -113,7 +90,7 @@ Este projeto é um aplicativo desktop projetado para ensinar os fundamentos do p
 
 - Não cobre teoria musical avançada.
 - Opções de sintetizadores são limitadas na versão inicial.
-- Suporte apenas para teclados MIDI e teclado do computador.
+- Suporte apenas para mouse e teclado do computador.
 
 ## Configuração e Instalação
 

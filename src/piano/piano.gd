@@ -32,11 +32,35 @@ var c3: int = 48;
 
 var playingback = false;
 
+func set_playingback(value: bool):
+	self.playingback = value;
+
 func _ready():
 	_create_keys();
+	_set_keys_label();
+	
 	$"OctaveIndicator/0".color = Color.DARK_GRAY;
 	$"OctaveIndicator/1".color = Color.WHITE_SMOKE;
 	$"OctaveIndicator/2".color = Color.DARK_GRAY;
+
+func _hide_labels():
+	for i in range(36):
+		var key = keys[i + c3]
+		key.get_node("BlackKeyLabel").visible = false
+		key.get_node("WhiteKeyLabel").visible = false
+
+func _set_keys_label():
+	_hide_labels()
+	for i in range(13):
+		if not keys.has(i + current_octave * 12):
+			continue
+		var key = keys[i + current_octave * 12]
+		if key.animated_sprite_2d.get_animation() == 'black_key':
+			key.get_node("BlackKeyLabel").visible = true
+			key.get_node("BlackKeyLabel").text =  InputMap.action_get_events(solfege_to_midi.keys()[i])[0].as_text()[0]
+		else:
+			key.get_node("WhiteKeyLabel").visible = true
+			key.get_node("WhiteKeyLabel").text =  InputMap.action_get_events(solfege_to_midi.keys()[i])[0].as_text()[0]
 
 func _create_keys():
 	for i in range(36):
@@ -53,7 +77,7 @@ func _create_keys():
 		if key.animated_sprite_2d.get_animation() == 'black_key':
 			key.translate(Vector2(offset - 4, -6))
 			key.z_index = 1
-		else: 
+		else:
 			key.translate(Vector2(offset, 0))
 			offset += 8
 			key.z_index = 2
@@ -67,8 +91,10 @@ func _input(event):
 		
 	if event.is_action_pressed('shift+'):
 		current_octave = min(6, current_octave + 1)
+		_set_keys_label()
 	if event.is_action_pressed('shift-'):
 		current_octave = max(4, current_octave - 1)
+		_set_keys_label()
 	
 	$"OctaveIndicator/0".color = Color.DARK_GRAY;
 	$"OctaveIndicator/1".color = Color.DARK_GRAY;
@@ -88,11 +114,9 @@ func _input(event):
 
 func play_note(note: int):
 	if keys.has(note):
-		playingback = true
 		keys[note].call_deferred("press_key")
 		await get_tree().create_timer(0.5).timeout
 		keys[note].call_deferred("release_key")
-		playingback = false
 
 func _play_note(note: int):
 	if not playingback:

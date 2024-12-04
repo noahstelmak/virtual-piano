@@ -5,11 +5,25 @@
 [node name="Piano" type="Node2D"]
 script = ExtResource("1_s6lpn")
 
-[node name="Frame" type="Polygon2D" parent="."]
+[node name="Frame" type="Node2D" parent="."]
+
+[node name="Main" type="Polygon2D" parent="Frame"]
 position = Vector2(5.73913, 3)
 scale = Vector2(0.967391, 0.875)
 color = Color(0.439216, 0.203922, 0.113725, 1)
 polygon = PackedVector2Array(-8, -25.1429, -8, 17.1429, 168.764, 17.1429, 168.764, -25.1429)
+
+[node name="Detail" type="Polygon2D" parent="Frame"]
+position = Vector2(5.73913, 3)
+scale = Vector2(0.967391, 0.875)
+color = Color(0.269883, 0.114541, 0.0549037, 1)
+polygon = PackedVector2Array(-8, 17.1429, -8, 20.5714, 168.764, 20.5714, 168.764, 17.1429)
+
+[node name="Detail2" type="Polygon2D" parent="Frame"]
+position = Vector2(5.73913, 3)
+scale = Vector2(0.967391, 0.875)
+color = Color(0.269883, 0.114541, 0.0549037, 1)
+polygon = PackedVector2Array(-6.96629, -20.5714, -6.96629, 16, 167.73, 16, 167.73, -20.5714)
 
 [node name="OctaveIndicator" type="Control" parent="."]
 layout_mode = 3
