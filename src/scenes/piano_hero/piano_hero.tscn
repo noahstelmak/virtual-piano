@@ -1,0 +1,211 @@
+[gd_scene load_steps=13 format=3 uid="uid://c3hn85noxoy26"]
+
+[ext_resource type="PackedScene" uid="uid://bnc288ilvfnb" path="res://src/scenes/base/base.tscn" id="1_c4ue0"]
+[ext_resource type="Script" path="res://src/scenes/piano_hero/piano_hero.gd" id="2_qqpof"]
+
+[sub_resource type="Curve2D" id="Curve2D_n784m"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 62.5, 0, 0, 0, 0, 0, 62.5, 58)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_s7y78"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 67.5, 0, 0, 0, 0, 0, 67.5, 58)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_qxy1b"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 71.5, 0, 0, 0, 0, 0, 71.5, 58)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_vfr60"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 71.5, 0, 0, 0, 0, 0, 71.5, 58)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_1yx2y"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 62.5, 0, 0, 0, 0, 0, 62.5, 58)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_uly0j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 67.5, 0, 0, 0, 0, 0, 67.5, 58)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_ounnr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 72.5, 0, 0, 0, 0, 0, 72.5, 58)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_taikt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 67.5, 0, 0, 0, 0, 0, 67.5, 58)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_i10uh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 71.5, 0, 0, 0, 0, 0, 71.5, 58)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_dtfdi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 67.5, 0, 0, 0, 0, 0, 67.5, 58)
+}
+point_count = 2
+
+[node name="Base" instance=ExtResource("1_c4ue0")]
+script = ExtResource("2_qqpof")
+
+[node name="Piano" parent="." index="1"]
+z_index = 1
+
+[node name="Lane" type="Node2D" parent="." index="4"]
+position = Vector2(60, 58)
+
+[node name="Indicators" type="Node2D" parent="Lane" index="0"]
+
+[node name="Lane1" type="Polygon2D" parent="Lane/Indicators" index="0"]
+color = Color(1, 1, 1, 0.588235)
+polygon = PackedVector2Array(0, 0, 5, 0, 5, -58, 0, -58)
+
+[node name="Lane2" type="Polygon2D" parent="Lane/Indicators" index="1"]
+position = Vector2(6, 0)
+color = Color(0, 0, 0, 0.588235)
+polygon = PackedVector2Array(0, 0, 3, 0, 3, -58, 0, -58)
+
+[node name="Lane3" type="Polygon2D" parent="Lane/Indicators" index="2"]
+position = Vector2(10, 0)
+color = Color(1, 1, 1, 0.588235)
+polygon = PackedVector2Array(0, 0, 3, 0, 3, -58, 0, -58)
+
+[node name="Lane4" type="Polygon2D" parent="Lane/Indicators" index="3"]
+position = Vector2(14, 0)
+color = Color(0, 0, 0, 0.588235)
+polygon = PackedVector2Array(0, 0, 3, 0, 3, -58, 0, -58)
+
+[node name="Lane5" type="Polygon2D" parent="Lane/Indicators" index="4"]
+position = Vector2(18, 0)
+color = Color(1, 1, 1, 0.588235)
+polygon = PackedVector2Array(0, 0, 5, 0, 5, -58, 0, -58)
+
+[node name="Lane6" type="Polygon2D" parent="Lane/Indicators" index="5"]
+position = Vector2(24, 0)
+scale = Vector2(1, 1.11538)
+color = Color(1, 1, 1, 0.588235)
+polygon = PackedVector2Array(0, 0, 5, 0, 5, -52, 0, -52)
+
+[node name="Lane7" type="Polygon2D" parent="Lane/Indicators" index="6"]
+position = Vector2(30, 0)
+scale = Vector2(1, 1.11538)
+color = Color(0, 0, 0, 0.588235)
+polygon = PackedVector2Array(0, 0, 3, 0, 3, -52, 0, -52)
+
+[node name="Lane8" type="Polygon2D" parent="Lane/Indicators" index="7"]
+position = Vector2(34, 0)
+scale = Vector2(1, 1.11538)
+color = Color(1, 1, 1, 0.588235)
+polygon = PackedVector2Array(0, 0, 3, 0, 3, -52, 0, -52)
+
+[node name="Lane9" type="Polygon2D" parent="Lane/Indicators" index="8"]
+position = Vector2(38, 0)
+scale = Vector2(1, 1.11538)
+color = Color(0, 0, 0, 0.588235)
+polygon = PackedVector2Array(0, 0, 3, 0, 3, -52, 0, -52)
+
+[node name="Lane10" type="Polygon2D" parent="Lane/Indicators" index="9"]
+position = Vector2(42, 0)
+scale = Vector2(1, 1.11538)
+color = Color(1, 1, 1, 0.588235)
+polygon = PackedVector2Array(0, 0, 3, 0, 3, -52, 0, -52)
+
+[node name="Lane11" type="Polygon2D" parent="Lane/Indicators" index="10"]
+position = Vector2(46, 0)
+scale = Vector2(1, 1.11538)
+color = Color(0, 0, 0, 0.588235)
+polygon = PackedVector2Array(0, 0, 3, 0, 3, -52, 0, -52)
+
+[node name="Lane12" type="Polygon2D" parent="Lane/Indicators" index="11"]
+position = Vector2(50, 0)
+scale = Vector2(1, 1.11538)
+color = Color(1, 1, 1, 0.588235)
+polygon = PackedVector2Array(0, 0, 5, 0, 5, -52, 0, -52)
+
+[node name="Paths" type="Node2D" parent="Lane" index="1"]
+
+[node name="Path2D1" type="Path2D" parent="Lane/Paths" index="0"]
+position = Vector2(-60, -58)
+curve = SubResource("Curve2D_n784m")
+
+[node name="Path2D2" type="Path2D" parent="Lane/Paths" index="1"]
+position = Vector2(-60, -58)
+curve = SubResource("Curve2D_s7y78")
+
+[node name="Path2D3" type="Path2D" parent="Lane/Paths" index="2"]
+position = Vector2(-60, -58)
+curve = SubResource("Curve2D_qxy1b")
+
+[node name="Path2D4" type="Path2D" parent="Lane/Paths" index="3"]
+position = Vector2(-56, -58)
+curve = SubResource("Curve2D_vfr60")
+
+[node name="Path2D5" type="Path2D" parent="Lane/Paths" index="4"]
+position = Vector2(-42, -58)
+curve = SubResource("Curve2D_1yx2y")
+
+[node name="Path2D6" type="Path2D" parent="Lane/Paths" index="5"]
+position = Vector2(-41, -58)
+curve = SubResource("Curve2D_uly0j")
+
+[node name="Path2D7" type="Path2D" parent="Lane/Paths" index="6"]
+position = Vector2(-41, -58)
+curve = SubResource("Curve2D_ounnr")
+
+[node name="Path2D8" type="Path2D" parent="Lane/Paths" index="7"]
+position = Vector2(-32, -58)
+curve = SubResource("Curve2D_taikt")
+
+[node name="Path2D9" type="Path2D" parent="Lane/Paths" index="8"]
+position = Vector2(-28, -58)
+curve = SubResource("Curve2D_taikt")
+
+[node name="Path2D10" type="Path2D" parent="Lane/Paths" index="9"]
+position = Vector2(-28, -58)
+curve = SubResource("Curve2D_i10uh")
+
+[node name="Path2D11" type="Path2D" parent="Lane/Paths" index="10"]
+position = Vector2(-20, -58)
+curve = SubResource("Curve2D_taikt")
+
+[node name="Path2D12" type="Path2D" parent="Lane/Paths" index="11"]
+position = Vector2(-15, -58)
+curve = SubResource("Curve2D_dtfdi")
+
+[node name="Acertos" type="Label" parent="." index="5"]
+offset_left = 2.5
+offset_top = 3.0
+offset_right = 192.5
+offset_bottom = 58.0
+scale = Vector2(0.15, 0.15)
+theme_override_font_sizes/font_size = 40
+text = "Acertos: 0"
+
+[node name="Erros" type="Label" parent="." index="6"]
+offset_left = 9.0
+offset_top = 11.5
+offset_right = 155.0
+offset_bottom = 66.5
+scale = Vector2(0.15, 0.15)
+theme_override_font_sizes/font_size = 40
+text = "Erros: 0"
+
+[connection signal="note_pressed" from="Piano" to="." method="_on_piano_note_pressed"]
