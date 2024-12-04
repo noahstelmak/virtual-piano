@@ -86,6 +86,11 @@ func _input(event):
 	if playingback:
 		return
 		
+	if event is InputEventMIDI:
+		_midi_note(event)
+		
+		return 
+		
 	if event is not InputEventKey:
 		return
 		
@@ -111,6 +116,15 @@ func _input(event):
 			var note = solfege_to_midi[key_name] + current_octave * 12
 			if keys.has(note):
 				keys[note].call_deferred("_release_key")
+ 
+func _midi_note(event: InputEventMIDI):
+	if not keys.has(event.pitch):
+		return 
+	if event.message == MIDI_MESSAGE_NOTE_ON:
+		keys[event.pitch].call_deferred("press_key")
+		_play_note(event.pitch)
+	if event.message == MIDI_MESSAGE_NOTE_OFF:
+		keys[event.pitch].call_deferred("release_key")
 
 func play_note(note: int):
 	if keys.has(note):

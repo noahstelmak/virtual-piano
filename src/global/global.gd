@@ -6,6 +6,7 @@ const MIDI_PLAYER = preload("res://addons/midi/MidiPlayer.tscn")
 var midi_player: MidiPlayer;
 
 func _ready():
+	OS.open_midi_inputs()
 	midi_player = MIDI_PLAYER.instantiate();
 	midi_player.set_soundfont.call_deferred("res://assets/soundfonts/Yamaha-Grand-Lite-v2.0.sf2")
 	get_tree().get_root().add_child.call_deferred(midi_player)
